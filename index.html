@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El Retiro de Laura · Portosín, Galicia</title>
+<meta name="description" content="Apartamento frente a la playa de Goyanes, en Portosín (Ría de Muros e Noia). Guía para huéspedes: dónde comer, qué visitar, actividades y contacto.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --arena:#efe6d4;
+    --arena-claro:#f6efe1;
+    --blanco:#faf6ee;
+    --mar-hondo:#143240;
+    --mar:#2c728e;
+    --mar-claro:#7fb0c4;
+    --pino:#3a5c4d;
+    --coral:#cf6a45;
+    --tinta:#15303c;
+    --tinta-suave:#4a5d63;
+    --linea:rgba(20,50,64,.16);
+    --display:"Fraunces",Georgia,serif;
+    --body:"Hanken Grotesk",system-ui,sans-serif;
+    --mono:"Space Mono",ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--body);
+    color:var(--tinta);
+    background:var(--arena);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 28px}
+
+  /* ---------- NAV ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(239,230,212,.82);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--linea);
+  }
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+  .brand{font-family:var(--display);font-weight:600;font-size:1.05rem;letter-spacing:.01em}
+  .brand span{color:var(--coral)}
+  .nav-actions{display:flex;align-items:center;gap:20px}
+  .navlinks{display:flex;gap:26px}
+  .navlinks a{
+    text-decoration:none;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--tinta-suave);font-weight:500;transition:color .2s;
+  }
+  .navlinks a:hover{color:var(--coral)}
+
+  /* Lang toggle */
+  .lang-toggle{display:flex;align-items:center;gap:5px}
+  .lang-btn{
+    background:none;border:none;cursor:pointer;
+    font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;
+    color:var(--tinta-suave);font-weight:500;padding:4px 2px;
+    transition:color .2s;
+  }
+  .lang-btn:hover{color:var(--coral)}
+  .lang-btn.active{color:var(--coral);font-weight:700}
+  .lang-sep{color:var(--linea);font-size:.9rem;user-select:none}
+
+  /* Hamburger */
+  .nav-toggle{
+    display:none;flex-direction:column;justify-content:center;gap:5px;
+    background:none;border:none;cursor:pointer;padding:8px;margin:-8px;
+  }
+  .nav-toggle span{
+    display:block;width:22px;height:2px;background:var(--tinta);border-radius:1px;
+    transition:transform .25s,opacity .25s;
+  }
+  .nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0;transform:scaleX(0)}
+  .nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+  @media(max-width:720px){
+    .nav-toggle{display:flex}
+    .navlinks{
+      display:none;position:absolute;top:60px;left:0;right:0;z-index:49;
+      flex-direction:column;gap:0;padding:0;
+      background:rgba(239,230,212,.97);backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--linea);
+    }
+    .navlinks.open{display:flex}
+    .navlinks a{
+      padding:15px 20px;border-bottom:1px solid var(--linea);
+      font-size:.8rem;letter-spacing:.12em;
+    }
+    .navlinks a:last-child{border-bottom:none}
+  }
+
+  /* ---------- HERO ---------- */
+  header.hero{
+    position:relative;min-height:92vh;
+    display:flex;align-items:flex-end;
+    background:#0c1f28;color:var(--blanco);
+    overflow:hidden;
+  }
+  header.hero img{
+    position:absolute;inset:0;width:100%;height:100%;
+    object-fit:cover;object-position:center;
+  }Miguel
+  header.hero::after{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(8,20,28,.28) 0%,rgba(8,20,28,.04) 35%,rgba(8,20,28,.60) 62%,rgba(8,20,28,.84) 100%);
+  }
+  .hero-inner{
+    position:relative;z-index:2;padding:0 28px 72px;width:100%;
+    display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-end;
+  }
+  .hero-text{max-width:560px;text-align:right}
+  .eyebrow{
+    font-family:var(--mono);font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;
+    color:#cfe6ef;margin-bottom:18px;text-shadow:0 1px 3px rgba(0,0,0,.9),0 2px 14px rgba(0,0,0,.7);
+  }
+  header.hero h1{
+    font-family:var(--display);font-weight:500;
+    font-size:clamp(2.9rem,8vw,6rem);line-height:.98;letter-spacing:-.01em;
+    text-shadow:0 2px 4px rgba(0,0,0,.85),0 4px 40px rgba(0,0,0,.65);
+  }
+  .hero-sub{
+    margin-top:20px;font-size:1.08rem;color:rgba(250,246,238,.95);
+    text-shadow:0 1px 3px rgba(0,0,0,.85),0 2px 18px rgba(0,0,0,.6);
+  }
+  .scrollcue{
+    position:absolute;left:50%;bottom:28px;transform:translateX(-50%);z-index:2;
+    color:rgba(250,246,238,.65);text-decoration:none;
+    animation:bounce 2s ease-in-out infinite;
+  }
+  .scrollcue:hover{color:rgba(250,246,238,1)}
+  .scrollcue svg{display:block}
+  @keyframes bounce{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(8px)}}
+  @media(max-width:720px){.scrollcue{display:none}}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:96px 0}
+  .sec-label{
+    font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
+    color:var(--coral);margin-bottom:14px;display:flex;align-items:center;gap:12px;
+  }
+  .sec-label::before{content:"";width:26px;height:1px;background:var(--coral)}
+  h2{
+    font-family:var(--display);font-weight:500;
+    font-size:clamp(1.9rem,4.4vw,2.9rem);line-height:1.05;letter-spacing:-.01em;
+    color:var(--mar-hondo);margin-bottom:8px;
+  }
+  .lead{font-size:1.12rem;color:var(--tinta-suave);max-width:60ch;margin-top:18px}
+  p+p{margin-top:14px}
+  section p, section .lead, .card .note{text-align:justify}
+  @media(max-width:720px){section p, section .lead, .card .note{text-align:left}}
+
+  /* ---------- BIENVENIDA ---------- */
+  .bienvenida{background:var(--arena-claro)}
+  .bienvenida .grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:start}
+  .firma{
+    font-family:var(--display);font-style:italic;font-size:1.25rem;color:var(--pino);
+    margin-top:8px;
+  }
+  .firma small{display:block;font-style:normal;font-family:var(--mono);font-size:.7rem;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--tinta-suave);margin-top:8px}
+  @media(max-width:760px){.bienvenida .grid{grid-template-columns:1fr;gap:26px}}
+
+  /* ---------- PORTOSÍN STATS ---------- */
+  .portosin{background:var(--mar-hondo);color:var(--blanco)}
+  .portosin h2{color:var(--blanco)}
+  .portosin .sec-label{color:var(--mar-claro)}
+  .portosin .sec-label::before{background:var(--mar-claro)}
+  .portosin .lead{color:rgba(250,246,238,.82)}
+  .stats{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:48px;
+    background:rgba(250,246,238,.14);border:1px solid rgba(250,246,238,.14);
+  }
+  .stat{background:var(--mar-hondo);padding:24px 20px}
+  .stat .n{font-family:var(--display);font-size:1.7rem;color:var(--mar-claro);line-height:1}
+  .stat .l{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;
+    color:rgba(250,246,238,.7);margin-top:10px}
+  @media(max-width:620px){.stats{grid-template-columns:1fr 1fr}}
+
+  /* ---------- COMER ---------- */
+  .comer-cols{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:44px}
+  @media(max-width:760px){.comer-cols{grid-template-columns:1fr;gap:20px}}
+  .panel{background:var(--blanco);border:1px solid var(--linea);border-radius:4px;padding:30px}
+  .panel h3{font-family:var(--display);font-weight:600;font-size:1.2rem;color:var(--pino);margin-bottom:18px}
+  .meal{padding:13px 0;border-top:1px solid var(--linea)}
+  .meal:first-of-type{border-top:none}
+  .meal .who{font-weight:600;font-size:1.02rem}
+  .meal .where{font-family:var(--mono);font-size:.78rem;color:var(--tinta-suave);margin-top:3px}
+
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:44px}
+  @media(max-width:680px){.cards{grid-template-columns:1fr}}
+  .card{
+    background:var(--blanco);border:1px solid var(--linea);border-radius:4px;
+    padding:22px 22px 18px;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;
+  }
+  .card:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(20,50,64,.10)}
+  .card .top{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+  .card .name{font-family:var(--display);font-weight:600;font-size:1.18rem;color:var(--mar-hondo)}
+  .card .price{font-family:var(--mono);font-size:.78rem;font-weight:700;color:var(--coral);white-space:nowrap}
+  .card .place{font-family:var(--mono);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--tinta-suave);margin-top:6px}
+  .card .note{font-size:.92rem;color:var(--tinta-suave);margin-top:12px;flex:1;font-style:italic}
+  .card .tel{
+    margin-top:16px;font-family:var(--mono);font-size:.82rem;text-decoration:none;
+    color:var(--mar);font-weight:700;display:inline-flex;align-items:center;gap:8px;
+  }
+  .card .tel:hover{color:var(--coral)}
+  .card .tel::before{content:"›";font-size:1.1rem}
+
+  /* ---------- VISITAR ---------- */
+  .visitar{background:var(--arena-claro)}
+  .placecards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:44px}
+  .placecard{
+    background:var(--blanco);border:1px solid var(--linea);border-radius:4px;
+    overflow:hidden;text-decoration:none;display:flex;flex-direction:column;
+    transition:transform .2s,box-shadow .2s;
+  }
+  .placecard:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(20,50,64,.12)}
+  .placecard-img{aspect-ratio:4/3;overflow:hidden}
+  .placecard-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+  .placecard:hover .placecard-img img{transform:scale(1.06)}
+  .placecard-body{padding:13px 14px;display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+  .placecard-name{font-family:var(--display);font-weight:500;font-size:1.05rem;color:var(--mar-hondo);transition:color .2s}
+  .placecard:hover .placecard-name{color:var(--coral)}
+  .placecard-km{font-family:var(--mono);font-weight:700;font-size:.8rem;color:var(--coral);white-space:nowrap}
+  .placecard-km span{color:var(--tinta-suave);font-weight:400;font-size:.7rem}
+  @media(max-width:700px){.placecards{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:380px){.placecards{grid-template-columns:1fr}}
+
+  /* ---------- ACTIVIDADES ---------- */
+  .acts{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+  @media(max-width:680px){.acts{grid-template-columns:1fr}}
+  .act{background:var(--blanco);border:1px solid var(--linea);border-radius:4px;padding:26px}
+  .act .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--mar)}
+  .act h3{font-family:var(--display);font-weight:600;font-size:1.3rem;color:var(--mar-hondo);margin:8px 0 8px}
+  .act p{font-size:.94rem;color:var(--tinta-suave)}
+  .act a{display:inline-block;margin-top:14px;font-family:var(--mono);font-size:.84rem;font-weight:700;
+    color:var(--coral);text-decoration:none}
+  .act a:hover{text-decoration:underline}
+
+  /* ---------- CONTACTO ---------- */
+  .contacto{background:var(--mar-hondo);color:var(--blanco)}
+  .contacto h2{color:var(--blanco)}
+  .contacto .sec-label{color:var(--mar-claro)}
+  .contacto .sec-label::before{background:var(--mar-claro)}
+  .ccols{display:grid;grid-template-columns:1fr 1.3fr;gap:48px;margin-top:44px;align-items:start}
+  @media(max-width:760px){.ccols{grid-template-columns:1fr;gap:32px}}
+  .host{background:rgba(250,246,238,.06);border:1px solid rgba(250,246,238,.16);border-radius:4px;padding:30px}
+  .host .who{font-family:var(--display);font-size:1.5rem}
+  .host .role{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--mar-claro);margin-top:6px}
+  .host a.big{display:inline-block;margin-top:18px;font-family:var(--mono);font-weight:700;font-size:1.3rem;
+    color:var(--blanco);text-decoration:none}
+  .host a.big:hover{color:var(--mar-claro)}
+  .emerg{display:flex;flex-direction:column}
+  .emrow{display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+    padding:16px 0;border-bottom:1px solid rgba(250,246,238,.16)}
+  .emrow:first-child{border-top:1px solid rgba(250,246,238,.16)}
+  .emrow .lbl{font-weight:500}
+  .emrow .lbl small{display:block;font-family:var(--mono);font-size:.68rem;color:rgba(250,246,238,.6);
+    text-transform:none;letter-spacing:0;margin-top:4px}
+  .emrow a,.emrow .v{font-family:var(--mono);font-weight:700;font-size:1rem;color:var(--mar-claro);
+    text-decoration:none;white-space:nowrap}
+  .emrow a:hover{color:var(--coral)}
+  .em112{font-family:var(--display);font-size:2rem;color:var(--coral)!important}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:#0c1f28;color:rgba(250,246,238,.6);padding:40px 0;text-align:center}
+  footer .brand{color:var(--blanco);font-size:1.15rem;margin-bottom:8px}
+  footer p{font-size:.82rem;font-family:var(--mono);letter-spacing:.06em}
+
+  /* ---------- MOBILE ---------- */
+  @media(max-width:720px){
+    .wrap{padding:0 20px}
+    section{padding:60px 0}
+    header.hero{min-height:85vh}
+    .hero-inner{
+      position:absolute;inset:0;
+      padding:76px 20px 24px;
+      justify-content:space-between;
+      align-items:flex-start;
+    }
+    .eyebrow{align-self:flex-start}
+    .hero-text{max-width:100%;text-align:left}
+    header.hero h1{font-size:clamp(1.7rem,8.5vw,2.2rem);line-height:1.1;white-space:nowrap}
+    br.dsk{display:none}
+  }
+  @media(max-width:480px){
+    .stats{grid-template-columns:1fr 1fr}
+    .emrow{flex-wrap:wrap;gap:6px}
+    .em112{font-size:1.6rem}
+    .host a.big{font-size:1.1rem}
+    .ccols{gap:24px}
+  }
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){
+    .reveal{opacity:1;transform:none;transition:none}
+    html{scroll-behavior:auto}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="brand">El Retiro de <span>Laura</span></div>
+    <div class="nav-actions">
+      <div class="navlinks">
+        <a href="#portosin" data-i18n="nav.portosin">Portosín</a>
+        <a href="#comer" data-i18n="nav.comer">Comer</a>
+        <a href="#visitar" data-i18n="nav.visitar">Visitar</a>
+        <a href="#actividades" data-i18n="nav.actividades">Actividades</a>
+        <a href="#contacto" data-i18n="nav.contacto">Contacto</a>
+      </div>
+      <div class="lang-toggle">
+        <button class="lang-btn active" data-lang="es">ES</button>
+        <span class="lang-sep">|</span>
+        <button class="lang-btn" data-lang="en">EN</button>
+      </div>
+      <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <img src="assets/portada.jpeg" alt="Vista del mar y la playa de Goyanes desde el apartamento, con la ría de Muros e Noia al fondo">
+  <div class="hero-inner">
+    <p class="eyebrow">Portosín · Ría de Muros e Noia · Galicia</p>
+    <div class="hero-text">
+      <h1>El Retiro <br class="dsk">de Laura</h1>
+      <p class="hero-sub" data-i18n="hero.sub">Frente a la playa de Goyanes,<br>con el Atlántico a un paso de la ventana.</p>
+    </div>
+  </div>
+  <a href="#inicio" class="scrollcue" aria-label="Ir al contenido">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 5v14M5 12l7 7 7-7"/>
+    </svg>
+  </a>
+</header>
+
+<!-- BIENVENIDA -->
+<section class="bienvenida" id="inicio">
+  <div class="wrap">
+    <div class="grid reveal">
+      <div>
+        <p class="sec-label" data-i18n="bienvenida.label">Bienvenido a casa</p>
+        <h2 data-i18n="bienvenida.h2">Descansa, este sitio es para eso</h2>
+      </div>
+      <div>
+        <p class="lead" data-i18n="bienvenida.lead">El apartamento está justo enfrente de la playa de Portosín–Goyanes, más de 650 metros de arena que casi siempre tienes para ti.</p>
+        <p style="margin-top:18px;color:var(--tinta-suave)" data-i18n="bienvenida.p">Esperamos que encuentres todo lo que necesitas para una estancia de calma y desconexión. Cualquier cosa que surja, estamos a una llamada.</p>
+        <p class="firma">Natalia &amp; Javier
+          <small data-i18n="bienvenida.firma.small">Tus anfitriones</small>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTOSÍN -->
+<section class="portosin" id="portosin">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="sec-label" data-i18n="portosin.label">El lugar</p>
+      <h2>Portosín</h2>
+      <p class="lead" data-i18n="portosin.lead1">A medio camino entre Noia y Ribeira, en el arranque de las Rías Baixas: clima suave, tierra de Albariño y playas escondidas donde estar a solas incluso en pleno agosto.</p>
+      <p class="lead" style="margin-top:16px" data-i18n="portosin.lead2">Es un puerto pesquero de cerco y marisqueo, con uno de los mejores puertos deportivos de la ría —el Club Náutico de Portosín— y la playa de Coira en el centro del pueblo, rodeada de terrazas y restaurantes junto al muelle.</p>
+    </div>
+    <div class="stats reveal">
+      <div class="stat"><div class="n">8,3 km</div><div class="l">Noia</div></div>
+      <div class="stat"><div class="n">43 km</div><div class="l">Santiago</div></div>
+      <div class="stat"><div class="n">26 km</div><div class="l">Dunas de Corrubedo</div></div>
+      <div class="stat"><div class="n">66 km</div><div class="l">Finisterre</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMER -->
+<section class="comer" id="comer">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="sec-label" data-i18n="comer.label">A la mesa</p>
+      <h2 data-i18n="comer.h2">Comer en Portosín</h2>
+    </div>
+    <div class="comer-cols reveal">
+      <div class="panel">
+        <h3 data-i18n="comer.desayuno">Desayuno</h3>
+        <div class="meal">
+          <div class="who">Pastelería Vainilla y Genjibre</div>
+          <div class="where">Rúa San José, 1</div>
+        </div>
+      </div>
+      <div class="panel">
+        <h3 data-i18n="comer.pueblo">Para comer en el pueblo</h3>
+        <div class="meal"><div class="who">Nordestada</div><div class="where">Plaza do Curro, 11</div></div>
+        <div class="meal"><div class="who">Bodegón O Pescador</div><div class="where">Plaza do Curro</div></div>
+        <div class="meal"><div class="who">Di Pietro</div><div class="where">Rúa Rambla</div></div>
+        <div class="meal"><div class="who">Portofino</div><div class="where">Rúa Santo André</div></div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top:72px">
+      <p class="sec-label" data-i18n="comer.ocasion">Para una ocasión</p>
+      <h2 data-i18n="comer.recomendados">Recomendados cerca</h2>
+      <p class="lead" data-i18n="comer.lead">Merece la pena reservar antes de ir.</p>
+    </div>
+    <div class="cards reveal">
+      <div class="card">
+        <div class="top"><span class="name">Furancho ENXA</span><span class="price">20–30 €</span></div>
+        <div class="place">O Catadoiro</div>
+        <a class="tel" href="tel:+34620805263">620 80 52 63</a>
+      </div>
+      <div class="card">
+        <div class="top"><span class="name">Taberna da Pepa</span><span class="price">15–25 €</span></div>
+        <div class="place">Noia</div>
+        <div class="note" data-i18n="comer.note1">Pide el "Raxo".</div>
+        <a class="tel" href="tel:+34981820145">981 82 01 45</a>
+      </div>
+      <div class="card">
+        <div class="top"><span class="name">Galego Enxebre</span><span class="price">25–40 €</span></div>
+        <div class="place">Louro</div>
+        <div class="note" data-i18n="comer.note2">Mejor pedir mesa en la terraza.</div>
+        <a class="tel" href="tel:+34699454907">699 45 49 07</a>
+      </div>
+      <div class="card">
+        <div class="top"><span class="name">Pepe do Coxo</span><span class="price">40–60 €</span></div>
+        <div class="place">O Freixo</div>
+        <a class="tel" href="tel:+34981765189">981 76 51 89</a>
+      </div>
+      <div class="card">
+        <div class="top"><span class="name">Ríos</span><span class="price">60–90 €</span></div>
+        <div class="place">O Freixo</div>
+        <div class="note" data-i18n="comer.note3">Marisco de calidad.</div>
+        <a class="tel" href="tel:+34981765120">981 76 51 20</a>
+      </div>
+      <div class="card">
+        <div class="top"><span class="name">Mama Peixe</span><span class="price">30–50 €</span></div>
+        <div class="place">Santiago</div>
+        <div class="note" data-i18n="comer.note4">Muy recomendable para pescado.</div>
+        <a class="tel" href="tel:+34657668842">657 66 88 42</a>
+      </div>
+      <div class="card">
+        <div class="top"><span class="name">A Carballesa</span><span class="price">20–40 €</span></div>
+        <div class="place">Santiago</div>
+        <div class="note" data-i18n="comer.note5">Raciones típicas para compartir.</div>
+        <a class="tel" href="tel:+34981565426">981 56 54 26</a>
+      </div>
+      <div class="card">
+        <div class="top"><span class="name">Los Caracoles</span><span class="price">30–40 €</span></div>
+        <div class="place">Santiago</div>
+        <div class="note" data-i18n="comer.note6">Pequeño, con muy buen producto.</div>
+        <a class="tel" href="tel:+34981561498">981 56 14 98</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISITAR -->
+<section class="visitar" id="visitar">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="sec-label" data-i18n="visitar.label">Por descubrir</p>
+      <h2 data-i18n="visitar.h2">Qué visitar cerca</h2>
+      <p class="lead" data-i18n="visitar.lead">Distancias desde el apartamento.</p>
+    </div>
+    <div class="placecards reveal">
+      <a class="placecard" href="https://www.google.com/maps/search/Castro+de+Baro%C3%B1a,+Galicia" target="_blank" rel="noopener">
+        <div class="placecard-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/2014_Baro%C3%B1a._Castro_de_Baro%C3%B1a._Porto_do_Son.jpg/960px-2014_Baro%C3%B1a._Castro_de_Baro%C3%B1a._Porto_do_Son.jpg" alt="Castro de Baroña" loading="lazy"></div>
+        <div class="placecard-body"><span class="placecard-name">Castro de Baroña</span><span class="placecard-km">10,9 <span>km</span></span></div>
+      </a>
+      <a class="placecard" href="https://www.google.com/maps/search/Noia,+Galicia" target="_blank" rel="noopener">
+        <div class="placecard-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Noia_Galicia_Concello_2006.jpg/960px-Noia_Galicia_Concello_2006.jpg" alt="Noia" loading="lazy"></div>
+        <div class="placecard-body"><span class="placecard-name">Noia</span><span class="placecard-km">8,3 <span>km</span></span></div>
+      </a>
+      <a class="placecard" href="https://www.google.com/maps/search/Dunas+de+Corrubedo,+Galicia" target="_blank" rel="noopener">
+        <div class="placecard-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Corrubedo_Dunas_050eue.jpg/960px-Corrubedo_Dunas_050eue.jpg" alt="Dunas de Corrubedo" loading="lazy"></div>
+        <div class="placecard-body"><span class="placecard-name">Dunas de Corrubedo</span><span class="placecard-km">26,4 <span>km</span></span></div>
+      </a>
+      <a class="placecard" href="https://www.google.com/maps/search/Faro+de+Corrubedo,+Galicia" target="_blank" rel="noopener">
+        <div class="placecard-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Ribeira_Faro_de_Corrubedo_5.jpg/960px-Ribeira_Faro_de_Corrubedo_5.jpg" alt="Faro de Corrubedo" loading="lazy"></div>
+        <div class="placecard-body"><span class="placecard-name">Faro de Corrubedo</span><span class="placecard-km">28,7 <span>km</span></span></div>
+      </a>
+      <a class="placecard" href="https://www.google.com/maps/search/Mirador+de+A+Curota,+Galicia" target="_blank" rel="noopener">
+        <div class="placecard-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Mirador_da_Curota_-_panoramio.jpg/960px-Mirador_da_Curota_-_panoramio.jpg" alt="Mirador de A Curota" loading="lazy"></div>
+        <div class="placecard-body"><span class="placecard-name">Mirador de A Curota</span><span class="placecard-km">30 <span>km</span></span></div>
+      </a>
+      <a class="placecard" href="https://www.google.com/maps/search/Muros,+Galicia" target="_blank" rel="noopener">
+        <div class="placecard-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Muros.Galiza.04-2008.jpg/960px-Muros.Galiza.04-2008.jpg" alt="Muros" loading="lazy"></div>
+        <div class="placecard-body"><span class="placecard-name">Muros</span><span class="placecard-km">34,2 <span>km</span></span></div>
+      </a>
+      <a class="placecard" href="https://www.google.com/maps/search/Ribeira,+Galicia" target="_blank" rel="noopener">
+        <div class="placecard-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Casa_concello_Ribeira.jpg/960px-Casa_concello_Ribeira.jpg" alt="Ribeira" loading="lazy"></div>
+        <div class="placecard-body"><span class="placecard-name">Ribeira</span><span class="placecard-km">38,5 <span>km</span></span></div>
+      </a>
+      <a class="placecard" href="https://www.google.com/maps/search/Santiago+de+Compostela,+Galicia" target="_blank" rel="noopener">
+        <div class="placecard-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a1/Santiago_Cathedral_2021_-_west_panorama.jpg/960px-Santiago_Cathedral_2021_-_west_panorama.jpg" alt="Santiago de Compostela" loading="lazy"></div>
+        <div class="placecard-body"><span class="placecard-name">Santiago de Compostela</span><span class="placecard-km">43 <span>km</span></span></div>
+      </a>
+      <a class="placecard" href="https://www.google.com/maps/search/Cascada+do+%C3%89zaro,+Galicia" target="_blank" rel="noopener">
+        <div class="placecard-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Cascada_del_Xallas_1.jpg/960px-Cascada_del_Xallas_1.jpg" alt="Cascada do Ézaro" loading="lazy"></div>
+        <div class="placecard-body"><span class="placecard-name">Cascada do Ézaro</span><span class="placecard-km">43,4 <span>km</span></span></div>
+      </a>
+      <a class="placecard" href="https://www.google.com/maps/search/Finisterre,+Galicia" target="_blank" rel="noopener">
+        <div class="placecard-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Finisterre.JPG/960px-Finisterre.JPG" alt="Finisterre" loading="lazy"></div>
+        <div class="placecard-body"><span class="placecard-name">Finisterre</span><span class="placecard-km">66,8 <span>km</span></span></div>
+      </a>
+      <a class="placecard" href="https://www.google.com/maps/search/Faro+de+Fisterra,+Galicia" target="_blank" rel="noopener">
+        <div class="placecard-img"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bd/Faro_de_Fisterra_-Galiza.jpg/960px-Faro_de_Fisterra_-Galiza.jpg" alt="Faro de Fisterra" loading="lazy"></div>
+        <div class="placecard-body"><span class="placecard-name">Faro de Fisterra</span><span class="placecard-km">70,1 <span>km</span></span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ACTIVIDADES -->
+<section class="actividades" id="actividades">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="sec-label" data-i18n="actividades.label">Al aire libre</p>
+      <h2 data-i18n="actividades.h2">Actividades</h2>
+    </div>
+    <div class="acts reveal">
+      <div class="act">
+        <div class="k">Surf</div>
+        <h3>Escuela As Furnas</h3>
+        <p data-i18n="actividades.surf.p">Clases y alquiler de material en la zona.</p>
+        <a href="tel:+34625771904">625 77 19 04</a>
+      </div>
+      <div class="act">
+        <div class="k">Paddle surf</div>
+        <h3>Kapaki Surf &amp; Long</h3>
+        <p data-i18n="actividades.paddle.p">Salidas de paddle por la ría.</p>
+        <a href="tel:+34633493141">633 49 31 41</a>
+      </div>
+      <div class="act">
+        <div class="k" data-i18n="actividades.senderismo.k">A pie</div>
+        <h3 data-i18n="actividades.senderismo.h3">Senderismo</h3>
+        <p data-i18n="actividades.senderismo.p">Rutas por la costa y los miradores de la ría de Muros e Noia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto" id="contacto">
+  <div class="wrap">
+    <div class="reveal">
+      <p class="sec-label" data-i18n="contacto.label">Si nos necesitas</p>
+      <h2 data-i18n="contacto.h2">Contacto y emergencias</h2>
+    </div>
+    <div class="ccols reveal">
+      <div class="host">
+        <div class="who">Javier &amp; Natalia</div>
+        <div class="role" data-i18n="contacto.role">Anfitriones</div>
+        <a class="big" href="tel:+34679253118">679 253 118</a>
+      </div>
+      <div class="emerg">
+        <div class="emrow">
+          <span class="lbl" data-i18n="contacto.emerg1">Emergencias<small>Cualquier tipo de urgencia</small></span>
+          <a class="em112" href="tel:112">112</a>
+        </div>
+        <div class="emrow">
+          <span class="lbl" data-i18n="contacto.emerg2">Policía Local · Porto do Son<small>9:00–21:00 · fuera de ese horario, Guardia Civil</small></span>
+          <a href="tel:+34676456744">676 456 744</a>
+        </div>
+        <div class="emrow">
+          <span class="lbl" data-i18n="contacto.emerg3">Centro de Salud de Portosín<small>Lunes a viernes · 8:00–15:00</small></span>
+          <a href="tel:+34981766772">981 76 67 72</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand">El Retiro de Laura</div>
+    <p>Portosín · Ría de Muros e Noia · A Coruña</p>
+  </div>
+</footer>
+
+<script>
+  /* ---------- Reveal on scroll ---------- */
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  /* ---------- Mobile nav ---------- */
+  const navToggle = document.querySelector('.nav-toggle');
+  const navlinks  = document.querySelector('.navlinks');
+  navToggle.addEventListener('click', () => {
+    const open = navlinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open);
+  });
+  navlinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navlinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', false);
+    });
+  });
+
+  /* ---------- i18n ---------- */
+  const i18n = {
+    es: {
+      'nav.portosin':             'Portosín',
+      'nav.comer':                'Comer',
+      'nav.visitar':              'Visitar',
+      'nav.actividades':          'Actividades',
+      'nav.contacto':             'Contacto',
+      'hero.sub':                 'Frente a la playa de Goyanes,<br>con el Atlántico a un paso de la ventana.',
+      'bienvenida.label':         'Bienvenido a casa',
+      'bienvenida.h2':            'Descansa, este sitio es para eso',
+      'bienvenida.lead':          'El apartamento está justo enfrente de la playa de Portosín–Goyanes, más de 650 metros de arena que casi siempre tienes para ti.',
+      'bienvenida.p':             'Esperamos que encuentres todo lo que necesitas para una estancia de calma y desconexión. Cualquier cosa que surja, estamos a una llamada.',
+      'bienvenida.firma.small':   'Tus anfitriones',
+      'portosin.label':           'El lugar',
+      'portosin.lead1':           'A medio camino entre Noia y Ribeira, en el arranque de las Rías Baixas: clima suave, tierra de Albariño y playas escondidas donde estar a solas incluso en pleno agosto.',
+      'portosin.lead2':           'Es un puerto pesquero de cerco y marisqueo, con uno de los mejores puertos deportivos de la ría —el Club Náutico de Portosín— y la playa de Coira en el centro del pueblo, rodeada de terrazas y restaurantes junto al muelle.',
+      'comer.label':              'A la mesa',
+      'comer.h2':                 'Comer en Portosín',
+      'comer.desayuno':           'Desayuno',
+      'comer.pueblo':             'Para comer en el pueblo',
+      'comer.ocasion':            'Para una ocasión',
+      'comer.recomendados':       'Recomendados cerca',
+      'comer.lead':               'Merece la pena reservar antes de ir.',
+      'comer.note1':              'Pide el "Raxo".',
+      'comer.note2':              'Mejor pedir mesa en la terraza.',
+      'comer.note3':              'Marisco de calidad.',
+      'comer.note4':              'Muy recomendable para pescado.',
+      'comer.note5':              'Raciones típicas para compartir.',
+      'comer.note6':              'Pequeño, con muy buen producto.',
+      'visitar.label':            'Por descubrir',
+      'visitar.h2':               'Qué visitar cerca',
+      'visitar.lead':             'Distancias desde el apartamento.',
+      'actividades.label':        'Al aire libre',
+      'actividades.h2':           'Actividades',
+      'actividades.surf.p':       'Clases y alquiler de material en la zona.',
+      'actividades.paddle.p':     'Salidas de paddle por la ría.',
+      'actividades.senderismo.k': 'A pie',
+      'actividades.senderismo.h3':'Senderismo',
+      'actividades.senderismo.p': 'Rutas por la costa y los miradores de la ría de Muros e Noia.',
+      'contacto.label':           'Si nos necesitas',
+      'contacto.h2':              'Contacto y emergencias',
+      'contacto.role':            'Anfitriones',
+      'contacto.emerg1':          'Emergencias<small>Cualquier tipo de urgencia</small>',
+      'contacto.emerg2':          'Policía Local · Porto do Son<small>9:00–21:00 · fuera de ese horario, Guardia Civil</small>',
+      'contacto.emerg3':          'Centro de Salud de Portosín<small>Lunes a viernes · 8:00–15:00</small>',
+    },
+    en: {
+      'nav.portosin':             'Portosín',
+      'nav.comer':                'Food',
+      'nav.visitar':              'Visit',
+      'nav.actividades':          'Activities',
+      'nav.contacto':             'Contact',
+      'hero.sub':                 'Overlooking Goyanes beach,<br>with the Atlantic just a step from the window.',
+      'bienvenida.label':         'Welcome home',
+      'bienvenida.h2':            'Rest — this place is made for it',
+      'bienvenida.lead':          'The apartment is right across from Portosín–Goyanes beach — over 650 metres of sand that are almost always yours.',
+      'bienvenida.p':             'We hope you find everything you need for a calm, disconnected stay. If anything comes up, we\'re just a call away.',
+      'bienvenida.firma.small':   'Your hosts',
+      'portosin.label':           'The place',
+      'portosin.lead1':           'Halfway between Noia and Ribeira, at the gateway to the Rías Baixas: mild climate, Albariño wine country and hidden beaches where you can be alone even in August.',
+      'portosin.lead2':           'A fishing and shellfish port, home to one of the best marinas on the estuary — Club Náutico de Portosín — and Coira beach in the village centre, surrounded by terraces and restaurants by the quay.',
+      'comer.label':              'At the table',
+      'comer.h2':                 'Eating in Portosín',
+      'comer.desayuno':           'Breakfast',
+      'comer.pueblo':             'Lunch in the village',
+      'comer.ocasion':            'For a special occasion',
+      'comer.recomendados':       'Nearby recommendations',
+      'comer.lead':               'Worth booking ahead.',
+      'comer.note1':              'Ask for the "Raxo".',
+      'comer.note2':              'Best to sit on the terrace.',
+      'comer.note3':              'Quality shellfish.',
+      'comer.note4':              'Highly recommended for fish.',
+      'comer.note5':              'Typical sharing plates.',
+      'comer.note6':              'Small, with excellent produce.',
+      'visitar.label':            'To discover',
+      'visitar.h2':               'What to visit nearby',
+      'visitar.lead':             'Distances from the apartment.',
+      'actividades.label':        'Outdoors',
+      'actividades.h2':           'Activities',
+      'actividades.surf.p':       'Classes and equipment hire in the area.',
+      'actividades.paddle.p':     'Paddleboarding trips along the estuary.',
+      'actividades.senderismo.k': 'On foot',
+      'actividades.senderismo.h3':'Hiking',
+      'actividades.senderismo.p': 'Coastal routes and viewpoints along the Muros e Noia estuary.',
+      'contacto.label':           'If you need us',
+      'contacto.h2':              'Contact & emergencies',
+      'contacto.role':            'Hosts',
+      'contacto.emerg1':          'Emergencies<small>Any type of emergency</small>',
+      'contacto.emerg2':          'Local Police · Porto do Son<small>9:00–21:00 · outside these hours, Guardia Civil</small>',
+      'contacto.emerg3':          'Health Centre · Portosín<small>Monday to Friday · 8:00–15:00</small>',
+    }
+  };
+
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (i18n[lang][key] !== undefined) el.innerHTML = i18n[lang][key];
+    });
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.lang === lang);
+    });
+    localStorage.setItem('lang', lang);
+  }
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => setLang(btn.dataset.lang));
+  });
+
+  const savedLang = localStorage.getItem('lang') || 'es';
+  if (savedLang !== 'es') setLang(savedLang);
+</script>
+</body>
+</html>

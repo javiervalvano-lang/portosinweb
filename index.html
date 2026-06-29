@@ -73,6 +73,18 @@
   .lang-btn.active{color:var(--coral);font-weight:700}
   .lang-sep{color:var(--linea);font-size:.9rem;user-select:none}
 
+  /* Install button */
+  #install-btn{
+    display:flex;align-items:center;gap:5px;
+    background:none;border:1px solid var(--linea);border-radius:20px;
+    cursor:pointer;padding:4px 10px;
+    font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--tinta-suave);font-weight:500;
+    transition:color .2s,border-color .2s;
+  }
+  #install-btn:hover{color:var(--coral);border-color:var(--coral)}
+  #install-btn[hidden]{display:none}
+
   /* Hamburger */
   .nav-toggle{
     display:none;flex-direction:column;justify-content:center;gap:5px;
@@ -331,6 +343,10 @@
         <span class="lang-sep">|</span>
         <button class="lang-btn" data-lang="en">EN</button>
       </div>
+      <button id="install-btn" hidden aria-label="Instalar app">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        <span data-i18n="nav.install">Instalar</span>
+      </button>
       <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -624,6 +640,7 @@
       'nav.visitar':              'Visitar',
       'nav.actividades':          'Actividades',
       'nav.contacto':             'Contacto',
+      'nav.install':              'Instalar',
       'hero.sub':                 'Frente a la playa de Goyanes,<br>con el Atlántico a un paso de la ventana.',
       'bienvenida.label':         'Bienvenido a casa',
       'bienvenida.h2':            'Descansa, este sitio es para eso',
@@ -669,6 +686,7 @@
       'nav.visitar':              'Visit',
       'nav.actividades':          'Activities',
       'nav.contacto':             'Contact',
+      'nav.install':              'Install',
       'hero.sub':                 'Overlooking Goyanes beach,<br>with the Atlantic just a step from the window.',
       'bienvenida.label':         'Welcome home',
       'bienvenida.h2':            'Rest — this place is made for it',
@@ -732,6 +750,29 @@
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./sw.js');
   }
+
+  /* ---------- PWA install button ---------- */
+  let _installPrompt = null;
+  const installBtn = document.getElementById('install-btn');
+
+  window.addEventListener('beforeinstallprompt', e => {
+    e.preventDefault();
+    _installPrompt = e;
+    installBtn.hidden = false;
+  });
+
+  installBtn.addEventListener('click', async () => {
+    if (!_installPrompt) return;
+    _installPrompt.prompt();
+    await _installPrompt.userChoice;
+    _installPrompt = null;
+    installBtn.hidden = true;
+  });
+
+  window.addEventListener('appinstalled', () => {
+    _installPrompt = null;
+    installBtn.hidden = true;
+  });
 </script>
 </body>
 </html>

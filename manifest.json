@@ -1,0 +1,16 @@
+{
+  "name": "El Retiro de Laura",
+  "short_name": "Retiro Laura",
+  "description": "Guía de huéspedes del apartamento frente a la playa de Goyanes, Portosín, Galicia.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#efe6d4",
+  "theme_color": "#143240",
+  "lang": "es",
+  "icons": [
+    { "src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

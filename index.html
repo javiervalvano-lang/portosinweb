@@ -65,12 +65,12 @@
   .lang-toggle{display:flex;align-items:center;gap:3px}
   .lang-btn{
     background:none;border:none;cursor:pointer;
-    font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;
-    color:var(--tinta-suave);font-weight:500;padding:4px 2px;
-    transition:color .2s;
+    font-size:.88rem;letter-spacing:0;
+    color:var(--tinta-suave);font-weight:500;padding:3px 4px;
+    transition:opacity .2s;opacity:.55;line-height:1;
   }
-  .lang-btn:hover{color:var(--coral)}
-  .lang-btn.active{color:var(--coral);font-weight:700}
+  .lang-btn:hover{opacity:1}
+  .lang-btn.active{opacity:1}
   .lang-sep{color:var(--linea);font-size:.9rem;user-select:none}
 
   /* Install button */
@@ -339,12 +339,12 @@
         <a href="#contacto" data-i18n="nav.contacto">Contacto</a>
       </div>
       <div class="lang-toggle">
-        <button class="lang-btn active" data-lang="es">ES</button>
-        <button class="lang-btn" data-lang="en">EN</button>
-        <button class="lang-btn" data-lang="de">DE</button>
-        <button class="lang-btn" data-lang="fr">FR</button>
-        <button class="lang-btn" data-lang="it">IT</button>
-        <button class="lang-btn" data-lang="pt">PT</button>
+        <button class="lang-btn active" data-lang="es" title="Español">🇪🇸</button>
+        <button class="lang-btn" data-lang="en" title="English">🇬🇧</button>
+        <button class="lang-btn" data-lang="it" title="Italiano">🇮🇹</button>
+        <button class="lang-btn" data-lang="de" title="Deutsch">🇩🇪</button>
+        <button class="lang-btn" data-lang="fr" title="Français">🇫🇷</button>
+        <button class="lang-btn" data-lang="pt" title="Português">🇵🇹</button>
       </div>
       <button id="install-btn" hidden aria-label="Instalar app">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
